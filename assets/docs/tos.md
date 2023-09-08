@@ -340,8 +340,8 @@ to protect our rights and property and to facilitate the proper functioning of t
 
 ### 10. PRIVACY POLICY
 
-We care about data privacy and security. Please review our Privacy
-Policy: [https://financy.kaio.dev](https://financy.kaio.dev). By using the
+We care about data privacy and security. Please review our [Privacy
+Policy](https://financy.kaio.dev/#/privacy-policy). By using the
 Services, you agree to be
 bound by our
 Privacy Policy, which is incorporated into these Legal Terms. Please be advised the Services are
