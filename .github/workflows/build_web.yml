@@ -1,0 +1,31 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build:
+    name: Build Web
+    env:
+      repo_secret: ${{secrets.REPO_SECRET}}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: '3.13.1'
+          channel: 'stable'
+      - run: cd app
+      - run: flutter pub get
+      - run: flutter build web
+      - run: |
+          cd build/web
+          git init
+          git config --local user.email hello@kaio.dev
+          git config --local user.name Kaio C. de Oliveira
+          git status
+          git remote add origin https://${{secrets.REPO_SECRET}}@github.com/devkaio/financy_docs.git
+          git checkout -b gh-pages
+          git add --all
+          git commit -m "update"
+          git push origin gh-pages -f
