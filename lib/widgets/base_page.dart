@@ -41,22 +41,26 @@ class _BasePageState extends State<BasePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(title: Text(widget.title)),
-      body: ValueListenableBuilder<String>(
-        valueListenable: _data,
-        builder: (context, value, child) {
-          if (value.isNotEmpty) {
-            return Markdown(
-              data: value,
-              onTapLink: (text, href, title) async {
-                launchUrl(Uri.parse(href!));
-              },
-            );
-          } else {
-            return const SizedBox.shrink();
-          }
-        },
+    return Title(
+      title: widget.title,
+      color: Colors.black,
+      child: Scaffold(
+        appBar: AppBar(title: Text(widget.title)),
+        body: ValueListenableBuilder<String>(
+          valueListenable: _data,
+          builder: (context, value, child) {
+            if (value.isNotEmpty) {
+              return Markdown(
+                data: value,
+                onTapLink: (text, href, title) async {
+                  launchUrl(Uri.parse(href!));
+                },
+              );
+            } else {
+              return const SizedBox.shrink();
+            }
+          },
+        ),
       ),
     );
   }

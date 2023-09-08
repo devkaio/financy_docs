@@ -7,6 +7,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Financy Agreements',
       theme: ThemeData(primarySwatch: Colors.teal),
       routes: {
         '/': (context) => const Agreements(),
@@ -15,15 +16,15 @@ class App extends StatelessWidget {
               assetPath: MarkdownAssets.eula,
               namedRoute: '/eula',
             ),
-        '/privacy_policy': (context) => const BasePage(
+        '/privacy-policy': (context) => const BasePage(
               title: 'Privacy Policy',
               assetPath: MarkdownAssets.privacyPolicy,
-              namedRoute: '/privacy_policy',
+              namedRoute: '/privacy-policy',
             ),
-        '/terms_of_service': (context) => const BasePage(
+        '/terms-of-service': (context) => const BasePage(
               title: 'Terms of Service',
               assetPath: MarkdownAssets.termsOfService,
-              namedRoute: '/terms_of_service',
+              namedRoute: '/terms-of-service',
             ),
       },
     );
