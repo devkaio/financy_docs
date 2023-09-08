@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
 
 import '../financy_docs.dart';
-import 'base_page.dart';
 
 class Agreements extends StatelessWidget {
   const Agreements({super.key});
 
-  List<BasePage> get pages => [
+  List<BasePage> get pages => const [
         BasePage(
           title: 'EULA',
-          assetPath: const FinancyDocs().eula,
+          assetPath: MarkdownAssets.eula,
+          namedRoute: '/eula',
         ),
         BasePage(
           title: 'Privacy Policy',
-          assetPath: const FinancyDocs().privacyPolicy,
+          assetPath: MarkdownAssets.privacyPolicy,
+          namedRoute: '/privacy_policy',
         ),
         BasePage(
           title: 'Terms of Service',
-          assetPath: const FinancyDocs().termsOfService,
+          assetPath: MarkdownAssets.termsOfService,
+          namedRoute: '/terms_of_service',
         ),
       ];
 
@@ -40,21 +42,20 @@ class Agreements extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => e,
-                                ),
-                              );
-                            },
-                            child: Text(
-                              e.title,
-                              style: const TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 16,
-                              ),
-                            ))
+                          onPressed: () {
+                            Navigator.pushNamed(
+                              context,
+                              e.namedRoute,
+                            );
+                          },
+                          child: Text(
+                            e.title,
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
+                          ),
+                        ),
                       ],
                     ),
                   ),

@@ -8,10 +8,12 @@ class BasePage extends StatefulWidget {
     super.key,
     required this.title,
     required this.assetPath,
+    required this.namedRoute,
   });
 
   final String assetPath;
   final String title;
+  final String namedRoute;
 
   @override
   State<BasePage> createState() => _BasePageState();
@@ -23,17 +25,17 @@ class _BasePageState extends State<BasePage> {
   @override
   void initState() {
     super.initState();
-    load();
+    _loadAsset();
 
-    _data.addListener(load);
+    _data.addListener(_loadAsset);
   }
 
-  Future<void> load() async =>
-      _data.value = await const FinancyDocs().load(widget.assetPath);
+  Future<void> _loadAsset() async =>
+      _data.value = await const AssetLoader().load(widget.assetPath);
 
   @override
   void dispose() {
-    _data.removeListener(load);
+    _data.removeListener(_loadAsset);
     super.dispose();
   }
 
@@ -52,7 +54,7 @@ class _BasePageState extends State<BasePage> {
               },
             );
           } else {
-            return SizedBox.shrink();
+            return const SizedBox.shrink();
           }
         },
       ),
