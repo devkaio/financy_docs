@@ -15,10 +15,10 @@ jobs:
         with:
           flutter-version: '3.13.1'
           channel: 'stable'
-      - run: cd app
-      - run: flutter pub get
-      - run: flutter build web
       - run: |
+          cd app
+          flutter pub get
+          flutter build web
           cd build/web
           git init
           git config --local user.email hello@kaio.dev
