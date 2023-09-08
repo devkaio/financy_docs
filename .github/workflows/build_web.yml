@@ -22,7 +22,7 @@ jobs:
           cd build/web
           git init
           git config --local user.email hello@kaio.dev
-          git config --local user.name Kaio C. de Oliveira
+          git config --local user.name "Kaio C. de Oliveira"
           git status
           git remote add origin https://${{secrets.REPO_SECRET}}@github.com/devkaio/financy_docs.git
           git checkout -b gh-pages
