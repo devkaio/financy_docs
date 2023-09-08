@@ -105,7 +105,7 @@ furnish any maintenance and support services with respect to the Licensed Applic
 You acknowledge that Licensor will be able to access and adjust Your downloaded Licensed Application
 content and Your personal information, and that Licensor's use of such material and information is
 subject to Your legal agreements with Licensor and Licensor's [privacy
-policy](https://financy.kaio.dev/privacy).
+policy](https://financy.kaio.dev).
 
 You acknowledge that the Licensor may periodically collect and use technical data and related
 information about your device, system, and application software, and peripherals, offer product
